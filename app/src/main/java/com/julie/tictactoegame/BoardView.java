@@ -123,9 +123,9 @@ public class BoardView extends View {
             canvas.drawRect(left, top, right, bottom, gridPaint);
 
             // horizontal lines
-            float left2 = 0 ;
+            float left2 = 0;
             float right2 = width;
-            float top2 = eltH * (i+1);
+            float top2 = eltH * (i + 1);
             float bottom2 = top2 + LINE_THICK;
 
             canvas.drawRect(left2, top2, right2, bottom2, gridPaint);

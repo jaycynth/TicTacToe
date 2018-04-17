@@ -9,7 +9,7 @@ public class BoardTwo {
     private char[] els;
     private char currentPlayer;
     private boolean ended;
-    private static int score;
+
 
     /*
     constructor for the board class.Initializes the elements of the board and a new game

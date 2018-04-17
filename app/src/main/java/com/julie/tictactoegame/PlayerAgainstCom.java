@@ -52,9 +52,7 @@ public class PlayerAgainstCom extends AppCompatActivity {
     public void gameEnded(char c) {
         String scores = (c == 'T') ? "Game Ended. Tie " : "GameEnded. " + c + " wins";
 
-            displayPlayerx(scorex);
-
-
+        displayPlayerx(scorex);
 
 
         new AlertDialog.Builder(this).setTitle("SCORE:").
@@ -79,13 +77,16 @@ public class PlayerAgainstCom extends AppCompatActivity {
     }
 
 
-    public void reset(View v){
+    public void reset(View v) {
         scorex = 0;
         scoreo = 0;
         displayPlayerx(scorex);
         displayPlayero(scoreo);
     }
-    //method to start a new game
+
+    /*
+    method to start a new game
+     */
     private void newGame() {
         board.newGame();
         boardView.invalidate();
