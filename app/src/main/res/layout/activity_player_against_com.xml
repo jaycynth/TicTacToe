@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.julie.tictactoegame.PlayerAgainstPlayer">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/board">
+
+        <TextView
+            android:id="@+id/playerx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
+            android:text="Player X :"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/scoreo"
+            android:layout_alignBottom="@+id/scoreo"
+            android:layout_alignLeft="@+id/playerx"
+            android:layout_alignStart="@+id/playerx"
+            android:layout_marginLeft="43dp"
+            android:layout_marginStart="43dp"
+            android:text="0"
+            android:textSize="16sp"
+            android:id="@+id/scorex" />
+
+        <TextView
+            android:id="@+id/playero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="167dp"
+            android:textSize="22sp"
+            android:layout_marginStart="167dp"
+            android:text="Player O:" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textSize="16sp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/playerx"
+            android:layout_marginLeft="208dp"
+            android:layout_marginStart="208dp"
+            android:text="0"
+            android:id="@+id/scoreo" />
+
+        <Button
+            android:id="@+id/reset"
+            android:onClick="reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/scorex"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="19dp"
+            android:gravity="center"
+            android:text="reset score board" />
+
+
+        <com.julie.tictactoegame.BoardView
+            android:id="@+id/board"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/playerx"
+            android:layout_marginTop="111dp" />
+    </RelativeLayout>
+
+</LinearLayout>
