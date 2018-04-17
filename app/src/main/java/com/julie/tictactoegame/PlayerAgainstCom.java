@@ -49,9 +49,9 @@ public class PlayerAgainstCom extends AppCompatActivity {
     popup message showing the scores of the game
      */
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public void gameEnded(char c) {
-        String scores = (c == 'T') ? "Game Ended. Tie " : "GameEnded. " + c + " wins";
-        if(c == 'X') {
+    public void gameEnded(char score) {
+        String scores = (score == 'T') ? "Game Over. Tie " : "Game Over. " + score + " wins";
+        if(score == 'X') {
             displayPlayerx(scorex);
         }else{
             displayPlayero(scoreo);

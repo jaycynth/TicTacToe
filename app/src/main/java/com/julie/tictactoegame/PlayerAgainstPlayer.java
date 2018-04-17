@@ -68,7 +68,7 @@ public class PlayerAgainstPlayer extends AppCompatActivity {
      */
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public void gameEnded(char score) {
-        String scores = (score == 'T') ? "Game Ended. Tie " : "GameEnded. " + score + " wins";
+        String scores = (score == 'T') ? "Game Over. Tie " : "Game Over. " + score + " wins";
         if (score == 'X') {
             scorex = scorex + 1;
             displayPlayerx(scorex);
