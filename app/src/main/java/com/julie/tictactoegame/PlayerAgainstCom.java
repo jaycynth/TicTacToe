@@ -51,8 +51,11 @@ public class PlayerAgainstCom extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public void gameEnded(char c) {
         String scores = (c == 'T') ? "Game Ended. Tie " : "GameEnded. " + c + " wins";
-
-        displayPlayerx(scorex);
+        if(c == 'X') {
+            displayPlayerx(scorex);
+        }else{
+            displayPlayero(scoreo);
+        }
 
 
         new AlertDialog.Builder(this).setTitle("SCORE:").
