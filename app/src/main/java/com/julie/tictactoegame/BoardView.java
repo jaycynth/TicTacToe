@@ -17,10 +17,10 @@ import android.view.View;
 
 public class BoardView extends View {
 
-    private static final int LINE_THICK = 5;
-    private static final int ELT_MARGIN = 20;
-    private static final int ELT_STROKE_WIDTH = 15;
+    private static int LINE_THICK = 3;
+    private static int EL_STROKE_WIDTH = 15;
     private int width, height, eltW, eltH;
+    private static int EL_MARGIN = 20;
     private Paint gridPaint, oPaint, xPaint;
     private Board board;
     private PlayerAgainstCom activity;
@@ -35,7 +35,7 @@ public class BoardView extends View {
         oPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         oPaint.setColor(Color.BLACK);
         oPaint.setStyle(Paint.Style.STROKE);
-        oPaint.setStrokeWidth(ELT_STROKE_WIDTH);
+        oPaint.setStrokeWidth(EL_STROKE_WIDTH);
         xPaint = new Paint(oPaint);
         xPaint.setColor(Color.BLUE);
     }
@@ -85,7 +85,6 @@ public class BoardView extends View {
             if (win != ' ') {
                 activity.gameEnded(win);
             } else {
-                // computer plays ...
                 win = board.computer();
                 invalidate();
 
@@ -113,7 +112,7 @@ public class BoardView extends View {
     this method draws the grid
      */
     private void drawGrid(Canvas canvas) {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             // vertical lines
             float left = eltW * (i + 1);
             float right = left + LINE_THICK;
@@ -135,25 +134,25 @@ public class BoardView extends View {
     /*
     this method draws the elements of the board ; the "X" and "O"
      */
-    private void drawElt(Canvas canvas, char c, int x, int y) {
-        if (c == 'O') {
-            float cx = (eltW * x) + eltW / 2;
-            float cy = (eltH * y) + eltH / 2;
+    private void drawElt(Canvas canvas, char s, int x, int y) {
+        if (s == 'O') {
+            float sx = (eltW * x) + eltW / 2;
+            float sy = (eltH * y) + eltH / 2;
 
-            canvas.drawCircle(cx, cy, Math.min(eltW, eltH) / 2 - ELT_MARGIN * 2, oPaint);
+            canvas.drawCircle(sx, sy, Math.min(eltW, eltH) / 2 - EL_MARGIN * 2, oPaint);
 
-        } else if (c == 'X') {
-            float startX = (eltW * x) + ELT_MARGIN;
-            float startY = (eltH * y) + ELT_MARGIN;
-            float endX = startX + eltW - ELT_MARGIN * 2;
-            float endY = startY + eltH - ELT_MARGIN;
+        } else if (s == 'X') {
+            float startX = (eltW * x) + EL_MARGIN;
+            float startY = (eltH * y) + EL_MARGIN;
+            float endX = startX + eltW - EL_MARGIN * 2;
+            float endY = startY + eltH - EL_MARGIN;
 
             canvas.drawLine(startX, startY, endX, endY, xPaint);
 
-            float startX2 = (eltW * (x + 1)) - ELT_MARGIN;
-            float startY2 = (eltH * y) + ELT_MARGIN;
-            float endX2 = startX2 - eltW + ELT_MARGIN * 2;
-            float endY2 = startY2 + eltH - ELT_MARGIN;
+            float startX2 = (eltW * (x + 1)) - EL_MARGIN;
+            float startY2 = (eltH * y) + EL_MARGIN;
+            float endX2 = startX2 - eltW + EL_MARGIN * 2;
+            float endY2 = startY2 + eltH - EL_MARGIN;
 
             canvas.drawLine(startX2, startY2, endX2, endY2, xPaint);
         }

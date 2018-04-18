@@ -67,14 +67,17 @@ public class PlayerAgainstPlayer extends AppCompatActivity {
     popup message showing the scores of the game
      */
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public void gameEnded(char score) {
-        String scores = (score == 'T') ? "Game Over. Tie " : "Game Over. " + score + " wins";
-        if (score == 'X') {
+    public void gameEnded(char s) {
+        String scores = (s == 'T') ? "Game Over. Tie " : "Game Over. " + s + " wins";
+
+        if (s == 'X') {
             scorex = scorex + 1;
             displayPlayerx(scorex);
-        } else {
+        }
+        if (s == 'O') {
             scoreo = scoreo + 1;
-            displayPlayerx(scoreo);
+            displayPlayero(scoreo);
+
         }
 
 

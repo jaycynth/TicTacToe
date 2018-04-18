@@ -46,17 +46,22 @@ public class PlayerAgainstCom extends AppCompatActivity {
     }
 
     /*
-    popup message showing the scores of the game
+    method that shoes the end of the game by displaying a
+    popup message showing the scores of the game and setting the scores on the scoreboard
      */
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public void gameEnded(char score) {
-        String scores = (score == 'T') ? "Game Over. Tie " : "Game Over. " + score + " wins";
-        if(score == 'X') {
+    public void gameEnded(char s) {
+        String scores = (s == 'T') ? "Game Over. Tie " : "Game Over. " + s + " wins";
+        if (s == 'X') {
+            scorex = scorex + 1;
             displayPlayerx(scorex);
-        }else{
-            displayPlayero(scoreo);
         }
 
+        if (s == 'O') {
+            scoreo = scoreo + 1;
+            displayPlayero(scoreo);
+
+        }
 
         new AlertDialog.Builder(this).setTitle("SCORE:").
                 setMessage(scores).

@@ -65,6 +65,8 @@
         <Button
             android:id="@+id/reset"
             android:onClick="reset"
+            android:background="#3F51B5"
+            android:padding="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/scorex"
