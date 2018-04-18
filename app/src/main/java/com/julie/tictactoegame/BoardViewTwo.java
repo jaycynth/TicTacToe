@@ -134,14 +134,14 @@ public class BoardViewTwo extends View {
     /*
     this method draws the elements of the board ; the "X" and "O"
      */
-    private void drawElt(Canvas canvas, char c, int x, int y) {
-        if (c == 'O') {
-            float cx = (eltW * x) + eltW / 2;
-            float cy = (eltH * y) + eltH / 2;
+    private void drawElt(Canvas canvas, char s, int x, int y) {
+        if (s == 'O') {
+            float sx = (eltW * x) + eltW / 2;
+            float sy = (eltH * y) + eltH / 2;
 
-            canvas.drawCircle(cx, cy, Math.min(eltW, eltH) / 2 - EL_MARGIN * 2, oPaint);
+            canvas.drawCircle(sx, sy, Math.min(eltW, eltH) / 2 - EL_MARGIN * 2, oPaint);
 
-        } else if (c == 'X') {
+        } else if (s == 'X') {
             float startX = (eltW * x) + EL_MARGIN;
             float startY = (eltH * y) + EL_MARGIN;
             float endX = startX + eltW - EL_MARGIN * 2;
