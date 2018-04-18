@@ -64,7 +64,8 @@ public class PlayerAgainstPlayer extends AppCompatActivity {
     }
 
     /*
-    popup message showing the scores of the game
+    method that shoes the end of the game by displaying a
+    popup message showing the scores of the game and setting the scores on the scoreboard
      */
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public void gameEnded(char s) {
